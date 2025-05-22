@@ -1,15 +1,9 @@
 
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Home: React.FC = () => {
-  const howItWorksRef = useRef<HTMLDivElement>(null);
-
-  const scrollToHowItWorks = () => {
-    howItWorksRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div>
       {/* Hero Section */}
@@ -27,9 +21,6 @@ const Home: React.FC = () => {
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
             <Button asChild size="lg" className="px-8">
               <Link to="/signin">Analyze Your Video</Link>
-            </Button>
-            <Button size="lg" variant="outline" onClick={scrollToHowItWorks}>
-              Learn More
             </Button>
           </div>
         </div>
@@ -73,43 +64,6 @@ const Home: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold">Performance Tracking</h3>
               <p className="text-gray-500 text-center">Monitor how your optimized videos are performing over time with detailed analytics.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section ref={howItWorksRef} className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container grid gap-10 px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How It Works</h2>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Optimize your videos in three simple steps and start seeing better results.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
-            <div className="flex flex-col items-center space-y-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-                <span className="text-xl font-bold">1</span>
-              </div>
-              <h3 className="text-xl font-bold">Upload Your Video</h3>
-              <p className="text-gray-500 text-center">Upload an existing video or paste a YouTube URL to begin the analysis.</p>
-            </div>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-                <span className="text-xl font-bold">2</span>
-              </div>
-              <h3 className="text-xl font-bold">Get AI Recommendations</h3>
-              <p className="text-gray-500 text-center">Our AI analyzes the content and generates optimized keywords, descriptions, and hashtags.</p>
-            </div>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-                <span className="text-xl font-bold">3</span>
-              </div>
-              <h3 className="text-xl font-bold">Apply & Track Results</h3>
-              <p className="text-gray-500 text-center">Apply the recommendations to your videos and track performance improvements.</p>
             </div>
           </div>
         </div>

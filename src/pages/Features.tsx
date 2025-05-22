@@ -113,24 +113,6 @@ const Features: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <div className="p-2 bg-primary/10 rounded-md w-12 h-12 flex items-center justify-center text-primary mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <CardTitle>Real-time Alerts</CardTitle>
-            <CardDescription>Get notified of important engagement events</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-500">
-              Receive real-time WhatsApp notifications when viewers subscribe, like, or share your videos, 
-              helping you engage with your audience promptly.
-            </p>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Call to Action */}
