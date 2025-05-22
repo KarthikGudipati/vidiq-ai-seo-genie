@@ -22,7 +22,17 @@ const Navbar: React.FC = () => {
           <Link to="/features" className="text-sm font-medium transition-colors hover:text-primary">
             Features
           </Link>
-          <Link to="/how-it-works" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link to="/#how-it-works" 
+            className="text-sm font-medium transition-colors hover:text-primary"
+            onClick={(e) => {
+              e.preventDefault();
+              if (location.pathname === '/') {
+                document.querySelector('#how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.location.href = '/#how-it-works';
+              }
+            }}
+          >
             How It Works
           </Link>
           <Link to="/pricing" className="text-sm font-medium transition-colors hover:text-primary">

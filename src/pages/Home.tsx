@@ -1,9 +1,15 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Home: React.FC = () => {
+  const howItWorksRef = useRef<HTMLDivElement>(null);
+
+  const scrollToHowItWorks = () => {
+    howItWorksRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -22,8 +28,8 @@ const Home: React.FC = () => {
             <Button asChild size="lg" className="px-8">
               <Link to="/signin">Analyze Your Video</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/how-it-works">Learn More</Link>
+            <Button size="lg" variant="outline" onClick={scrollToHowItWorks}>
+              Learn More
             </Button>
           </div>
         </div>
@@ -73,7 +79,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+      <section ref={howItWorksRef} className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
         <div className="container grid gap-10 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
